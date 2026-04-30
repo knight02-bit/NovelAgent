@@ -54,7 +54,22 @@
   - `memory/novelagent_project.md`
 
 ### v0：核心基础设施
-- **状态：** 进行中（v0.2 完成）
+- **状态：** 进行中（v0.3 完成）
+- **v0.3 完成时间：** 2026-05-01
+- **v0.3 执行的操作：**
+  - 安装 mempalace 依赖（ChromaDB + SQLite 知识图谱）
+  - 创建 `src/novelagent/storage/mempalace.py`：MemPalaceClient 封装
+  - 定义 EntityType 枚举（6 种小说实体类型）
+  - 实现 Entity/Relation 模型
+  - 实现完整 CRUD：add/get/delete 实体、add/remove/invalidate 关系
+  - 实现按类型过滤、timeline 查询、stats
+  - 编写 33 个单元测试，全部通过
+- 创建/修改的文件：
+  - `src/novelagent/storage/mempalace.py`（新建）
+  - `src/novelagent/storage/__init__.py`（更新导出）
+  - `tests/test_storage/__init__.py`（新建）
+  - `tests/test_storage/test_mempalace.py`（新建，33 个测试）
+
 - **v0.2 完成时间：** 2026-05-01
 - **v0.2 执行的操作：**
   - 创建 `src/novelagent/core/events.py`：EventType 枚举（20 种事件类型）、SystemEvent、NarrativeEvent、EventMetadata
@@ -104,8 +119,8 @@
 ## 五问重启检查
 | 问题 | 答案 |
 |------|------|
-| 我在哪里？ | v0.2 完成（事件总线 + 事件类型定义）|
-| 我要去哪里？ | 下一步 v0.3：MemPalace 集成（基础存储）|
+| 我在哪里？ | v0.3 完成（MemPalace 集成：基础存储 CRUD）|
+| 我要去哪里？ | 下一步 v0.4：基础知识图谱（实体CRUD + 关系CRUD）|
 | 目标是什么？ | 构建 NovelAgent 小说生成框架 |
 | 我学到了什么？ | 见 findings.md |
 | 我做了什么？ | 实现 EventType 枚举、SystemEvent/NarrativeEvent 数据类、EventBus pub/sub（分支 + 通配符 + 异步），38 测试全通过 |

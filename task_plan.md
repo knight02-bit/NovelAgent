@@ -18,7 +18,7 @@ v0 - 核心基础设施
 |------|------|------|
 | 0.1 conda 环境 + requirements.txt + 项目脚手架 | 无 | 1h | ✅ 完成 |
 | 0.2 事件总线 + 事件类型定义 | 0.1 | 2h | ✅ 完成 |
-| 0.3 MemPalace 集成（基础存储） | 0.1 | 2h |
+| 0.3 MemPalace 集成（基础存储） | 0.1 | 2h | ✅ 完成 |
 | 0.4 基础知识图谱（实体CRUD + 关系CRUD） | 0.3 | 3h |
 | 0.5 LLM Provider + config/llm.json 配置加载 | 0.1 | 3h |
 | 0.6 Agent Core（事件循环 + 基本 prompt 组装） | 0.2, 0.5 | 4h |
