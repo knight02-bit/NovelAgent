@@ -54,8 +54,20 @@
   - `memory/novelagent_project.md`
 
 ### v0：核心基础设施
-- **状态：** 进行中（v0.1 完成）
-- **v0.1 完成时间：** 2026-04-30
+- **状态：** 进行中（v0.2 完成）
+- **v0.2 完成时间：** 2026-05-01
+- **v0.2 执行的操作：**
+  - 创建 `src/novelagent/core/events.py`：EventType 枚举（20 种事件类型）、SystemEvent、NarrativeEvent、EventMetadata
+  - 创建 `src/novelagent/core/event_bus.py`：EventBus 异步 pub/sub、分支事件存储、通配符订阅
+  - 更新 `core/__init__.py` 导出公共 API
+  - 编写 38 个单元测试，全部通过
+  - 修复：NarrativeEvent 添加 type 字段以支持事件路由
+- 创建/修改的文件：
+  - `src/novelagent/core/events.py`（新建）
+  - `src/novelagent/core/event_bus.py`（新建）
+  - `src/novelagent/core/__init__.py`（更新导出）
+  - `tests/test_core/test_events.py`（新建，18 个测试）
+  - `tests/test_core/test_event_bus.py`（新建，20 个测试）
 - **v0.1 执行的操作：**
   - 创建 `environment.yaml`（conda 环境定义，Python 3.11）
   - 创建三层 requirements（core.txt / dev.txt / optional.txt）
@@ -92,11 +104,11 @@
 ## 五问重启检查
 | 问题 | 答案 |
 |------|------|
-| 我在哪里？ | v0.1 完成（conda 环境 + 脚手架 + requirements）|
-| 我要去哪里？ | 下一步 v0.2：事件总线 + 事件类型定义 |
+| 我在哪里？ | v0.2 完成（事件总线 + 事件类型定义）|
+| 我要去哪里？ | 下一步 v0.3：MemPalace 集成（基础存储）|
 | 目标是什么？ | 构建 NovelAgent 小说生成框架 |
 | 我学到了什么？ | 见 findings.md |
-| 我做了什么？ | conda env + requirements 三层 + pyproject + 项目包结构 + 测试目录 + llm.json 配置模板 + .gitignore + README 更新 |
+| 我做了什么？ | 实现 EventType 枚举、SystemEvent/NarrativeEvent 数据类、EventBus pub/sub（分支 + 通配符 + 异步），38 测试全通过 |
 
 ---
 
