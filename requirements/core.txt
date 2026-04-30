@@ -1,0 +1,10 @@
+# Core runtime dependencies
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+pydantic>=2.10.0
+pydantic-settings>=2.7.0
+httpx>=0.28.0
+instructor>=1.7.0
+chromadb>=0.6.0
+# mempalace - GitHub-based, install from repo
+mempalace @ git+https://github.com/MemPalace/mempalace.git@main

@@ -1,0 +1,11 @@
+-r core.txt
+
+# LLM provider SDKs (install as needed per your model choice)
+# Anthropic
+anthropic>=0.49.0
+
+# OpenAI / Compatible
+openai>=1.58.0
+
+# Ollama (local models, no SDK needed - uses OpenAI-compatible API)
+# No additional package required

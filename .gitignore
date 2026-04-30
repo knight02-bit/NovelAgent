@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Conda
+conda-env.txt
+# Environment export (user-specific)
+environment.lock.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project - config with API keys (user-specific, not committed)
+config/llm.json
+
+# Project - data
+*.palace/
+data/
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.next/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Lint
+.ruff_cache/
+.mypy_cache/
+
+# Docker
+.docker/
+
+# Logs
+*.log
+
+# Memory palace files (auto-generated)
+.mempalace/
+
+# Research / reference (not part of source)
+tmp/
