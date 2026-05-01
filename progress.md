@@ -54,7 +54,23 @@
   - `memory/novelagent_project.md`
 
 ### v0：核心基础设施
-- **状态：** 进行中（v0.3 完成）
+- **状态：** 进行中（v0.4 完成）
+- **v0.4 完成时间：** 2026-05-01
+- **v0.4 执行的操作：**
+  - 创建 `src/novelagent/kg/knowledge_graph.py`：KnowledgeGraphService 服务层
+  - 事件驱动封装：所有变更操作（create/update/delete entity, relation）自动发布事件
+  - 类型校验：create_entity 校验 EntityType，非法类型抛出 ValidationError
+  - 实体操作：create/get/update/delete，支持按类型过滤
+  - 关系操作：create/get/remove/invalidate
+  - 小说专用查询：get_story_cast / get_locations / get_factions / search_entities
+  - 高级查询：get_entity_network（depth 遍历）/ get_relation_map（子图过滤）
+  - 45 个单元测试，全部通过；整体覆盖率 99%
+- 创建/修改的文件：
+  - `src/novelagent/kg/knowledge_graph.py`（新建）
+  - `src/novelagent/kg/__init__.py`（更新导出）
+  - `tests/test_kg/__init__.py`（新建）
+  - `tests/test_kg/test_knowledge_graph.py`（新建，45 个测试）
+
 - **v0.3 完成时间：** 2026-05-01
 - **v0.3 执行的操作：**
   - 安装 mempalace 依赖（ChromaDB + SQLite 知识图谱）
@@ -120,7 +136,7 @@
 | 问题 | 答案 |
 |------|------|
 | 我在哪里？ | v0.3 完成（MemPalace 集成：基础存储 CRUD）|
-| 我要去哪里？ | 下一步 v0.4：基础知识图谱（实体CRUD + 关系CRUD）|
+| 我要去哪里？ | 下一步 v0.5：LLM Provider（单模型，硬编码配置）|
 | 目标是什么？ | 构建 NovelAgent 小说生成框架 |
 | 我学到了什么？ | 见 findings.md |
 | 我做了什么？ | 实现 EventType 枚举、SystemEvent/NarrativeEvent 数据类、EventBus pub/sub（分支 + 通配符 + 异步），38 测试全通过 |
