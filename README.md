@@ -12,7 +12,7 @@
 | 0.2 事件总线 + 事件类型定义 | ✅ 完成 |
 | 0.3 MemPalace 集成（基础存储） | ✅ 完成 |
 | 0.4 基础知识图谱（实体CRUD + 关系CRUD） | ✅ 完成 |
-| 0.5 LLM Provider + config/llm.json 配置加载 | ⏳ 待开始 |
+| 0.5 LLM Provider + config/llm.json 配置加载 | ✅ 完成 |
 | 0.6 Agent Core（事件循环 + prompt 组装） | ⏳ 待开始 |
 | 0.7 简单情节引擎（卷/章/节结构管理） | ⏳ 待开始 |
 | 0.8 基础 GUI（FastAPI + React：正文编辑 + KG 面板） | ⏳ 待开始 |

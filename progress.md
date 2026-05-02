@@ -54,7 +54,22 @@
   - `memory/novelagent_project.md`
 
 ### v0：核心基础设施
-- **状态：** 进行中（v0.4 完成）
+- **状态：** 进行中（v0.5 完成）
+- **v0.5 完成时间：** 2026-05-02
+- **v0.5 执行的操作：**
+  - 创建 `src/novelagent/llm/config.py`：LLMConfig（Pydantic 模型 + JSON 加载 + 场景路由）
+  - 创建 `src/novelagent/llm/provider.py`：LLMProvider（generate + API dispatch）
+  - 支持 Anthropic Messages API + OpenAI-compatible API（含 DeepSeek/Ollama）
+  - 场景路由：narrative/analysis/brainstorm/filter/kg → 对应 provider/model
+  - httpx mock 测试：验证请求头/body/参数覆盖/错误处理
+  - 22 个单元测试全部通过；整体覆盖率 97%
+- 创建/修改的文件：
+  - `src/novelagent/llm/config.py`（新建）
+  - `src/novelagent/llm/provider.py`（新建）
+  - `src/novelagent/llm/__init__.py`（更新导出）
+  - `tests/test_llm/test_config.py`（新建，10 个测试）
+  - `tests/test_llm/test_provider.py`（新建，12 个测试）
+
 - **v0.4 完成时间：** 2026-05-01
 - **v0.4 执行的操作：**
   - 创建 `src/novelagent/kg/knowledge_graph.py`：KnowledgeGraphService 服务层
@@ -136,7 +151,7 @@
 | 问题 | 答案 |
 |------|------|
 | 我在哪里？ | v0.3 完成（MemPalace 集成：基础存储 CRUD）|
-| 我要去哪里？ | 下一步 v0.5：LLM Provider（单模型，硬编码配置）|
+| 我要去哪里？ | 下一步 v0.6：Agent Core（事件循环 + prompt 组装）|
 | 目标是什么？ | 构建 NovelAgent 小说生成框架 |
 | 我学到了什么？ | 见 findings.md |
 | 我做了什么？ | 实现 EventType 枚举、SystemEvent/NarrativeEvent 数据类、EventBus pub/sub（分支 + 通配符 + 异步），38 测试全通过 |
